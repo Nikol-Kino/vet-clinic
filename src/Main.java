@@ -1,6 +1,26 @@
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
+    static String PASSWORD = "d";
+    static Scanner SCANNER = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        run();
+    }
+    static void run (){
+        boolean accepted = false;
+        for (int i = 0; i < 3; i++){
+            System.out.print("Password: ");
+            String input = SCANNER.nextLine();
+
+            if (PASSWORD.equals(input)){
+                accepted = true;
+                break;
+            }else {
+                System.out.println("access denied. Please check your password");
+            }
+        }
+        System.out.println(accepted ? "Wellcome to the vet" : "Application has been blocked");
     }
 }
