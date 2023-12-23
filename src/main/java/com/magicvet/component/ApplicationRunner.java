@@ -6,19 +6,18 @@ import main.java.com.magicvet.model.Pet;
 import main.java.com.magicvet.service.ClientService;
 import main.java.com.magicvet.service.PetService;
 
-import javax.security.auth.login.CredentialException;
 
 public class ApplicationRunner {
 
-    private ClientService clientService = new ClientService();
-    private PetService petService = new PetService();
-    private String createPetNow;
+    private final ClientService clientService = new ClientService();
+    private final PetService petService = new PetService();
 
     public void run (){
         if (Authenticator.auth()){
             Client client = clientService.registerNewClient();
 
             if (client != null){
+                String createPetNow;
                 do {
 
                     System.out.println("Do you want to adding your pet now? (yes / no)");
@@ -35,6 +34,8 @@ public class ApplicationRunner {
                     client.setPet(pet);
                     pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
                     System.out.println("Pet has been added.");
+
+                    System.out.println(client);
                 }
             }
         }
