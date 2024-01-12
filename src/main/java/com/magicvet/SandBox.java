@@ -33,7 +33,7 @@ public class SandBox {
                 new Dog(9),
                 new Cat(11),
                 new Cat(12),
-                new Dog(14)
+                new Dog(15)
         };
 
         Arrays.sort(pets, new AnimalAgeComparator());
