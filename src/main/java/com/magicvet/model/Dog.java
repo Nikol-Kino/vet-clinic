@@ -1,8 +1,26 @@
 package main.java.com.magicvet.model;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Dog extends Pet{
+public class Dog extends Pet {
+
+    public static final String XS = "XS";
+    public static final String S = "S";
+    public static final String M = "M";
+    public static final String L = "L";
+    public static final String XL = "XL";
+
+    public Dog(){
+
+    }
+    public Dog (int age){
+        super(age);
+    }
+    public Dog(String size){
+        this.size = size;
+    }
+
     private Pet pet;
     private String size;
 
