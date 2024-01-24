@@ -7,7 +7,7 @@ public class Dog extends Pet {
     public Dog(){
 
     }
-    public Dog (int age){
+    public Dog (String age){
         super(age);
     }
     public Dog(Size size){
