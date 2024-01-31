@@ -29,9 +29,9 @@ public abstract class Pet{
         return  "Pet: {"
                 + "\n\tType: " + type
                 + "\n\tSex: " + sex
-                + "\n\tAge: " + age
+                + "\tAge: " + age
                 + "\n\tName: " + name
-                + "\n\tOwner name: " + ownerName
+                + "\t\tOwner name: " + ownerName
                 + "\n\tRegistration Date: " + registrationDate.format(FORMAT)
                 + "\n}";
     }

@@ -10,19 +10,19 @@ public class Client {
     private String firstName;
     private String lastName;
     private String email;
-
     private List<Pet> pets = new ArrayList<>();
-
     private final LocalDateTime registrationClientDate = LocalDateTime.now();
+    private Location location;
 
     @Override
     public String toString (){
         return "Client {"
                 + "\n\tFirst name: " + firstName
-                + "\n\tLast name: " + lastName
-                + "\n\temail: " + email
-                +"\n\tpets: " + pets
-                + "\n\tRegistration Date: " + registrationClientDate.format(FORMATTERUSERDATE)
+                + "\tLast name: " + lastName
+                + "\nemail: " + email
+                + "\tLocation: " + location
+                +"\npets: " + pets
+                + "\nRegistration Date: " + registrationClientDate.format(FORMATTERUSERDATE)
                 +"\n}";
     }
 
@@ -70,12 +70,24 @@ public class Client {
         return pets;
     }
 
-    public void setPet(List<Pet> pets) {
+    public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
 
     public void addPet(Pet pet){
         pets.add(pet);
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public enum Location{
+        KYIV, LVIV, ODESA
     }
 
 }
