@@ -24,14 +24,15 @@ public class Dog extends Pet {
 
     @Override
     public String toString(){
-
-        return    "\nPet: " + getType()
-                + "\nSex: " + getSex()
-                + "\nAge: " + getAge()
-                + "\nName: " + getName()
-                + "\nOwner name: " + getOwnerName()
-                + "\nSize: " + size
-                + "\n";
+        return  "Pet: {"
+                + "\n\tType: " + getType()
+                + "\n\tSex: " + getSex()
+                + "\tAge: " + getAge()
+                + "\n\tName: " + getName()
+                + "\tSize: " + getSize()
+                + "\t\tOwner name: " + getOwnerName()
+                + "\n\tRegistration Date: " + getRegistrationDate().format(FORMAT)
+                + "\n}";
     }
 
     @Override
@@ -70,6 +71,17 @@ public class Dog extends Pet {
             this.value = value;
         }
 
+        public static Size fromString(String value) {
+            for (Size size : values()){
+                if (size.toString().equals(value)){
+                    return size;
+                }
+            }
+
+            System.out.println("Unable to parse value '" + value + "'. using default value " + UNKNOWN);
+
+            return UNKNOWN;
+        }
         public int getValue() {
             return value;
         }
